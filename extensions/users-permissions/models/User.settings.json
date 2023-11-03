@@ -1,0 +1,118 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "users-permissions_user",
+  "info": {
+    "name": "user",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "username": {
+      "type": "string",
+      "minLength": 3,
+      "unique": true,
+      "configurable": false,
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "minLength": 6,
+      "configurable": false,
+      "required": true
+    },
+    "provider": {
+      "type": "string",
+      "configurable": false
+    },
+    "password": {
+      "type": "password",
+      "minLength": 6,
+      "configurable": false,
+      "private": true
+    },
+    "resetPasswordToken": {
+      "type": "string",
+      "configurable": false,
+      "private": true
+    },
+    "confirmed": {
+      "type": "boolean",
+      "default": false,
+      "configurable": false
+    },
+    "blocked": {
+      "type": "boolean",
+      "default": false,
+      "configurable": false
+    },
+    "role": {
+      "model": "role",
+      "via": "users",
+      "plugin": "users-permissions",
+      "configurable": false
+    },
+    "fullName": {
+      "type": "string"
+    },
+    "profilePicture": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "coverImage": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "phone": {
+      "type": "string"
+    },
+    "shortBio": {
+      "type": "string"
+    },
+    "facebookLink": {
+      "type": "string"
+    },
+    "websiteLink": {
+      "type": "string"
+    },
+    "aboutDescription": {
+      "type": "string"
+    },
+    "aboutImages": {
+      "collection": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "followers": {
+      "plugin": "users-permissions",
+      "collection": "user"
+    },
+    "followings": {
+      "plugin": "users-permissions",
+      "collection": "permission"
+    },
+    "savedAds": {
+      "collection": "user-ad"
+    },
+    "membershipDate": {
+      "type": "datetime"
+    },
+    "firebaseID": {
+      "type": "string"
+    },
+    "bookings": {
+      "collection": "booking",
+      "via": "booker"
+    },
+    "savedServices": {
+      "collection": "service"
+    }
+  }
+}

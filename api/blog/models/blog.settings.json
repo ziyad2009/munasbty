@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "blogs",
+  "info": {
+    "name": "Blog"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "featuredImage": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "datePosted": {
+      "type": "datetime"
+    },
+    "author": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "blogContent": {
+      "type": "text"
+    },
+    "isFeatured": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

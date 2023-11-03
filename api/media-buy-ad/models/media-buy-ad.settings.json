@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "media_buy_ads",
+  "info": {
+    "name": "MediaBuyAd"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "adTitle": {
+      "type": "string",
+      "required": true
+    },
+    "price": {
+      "type": "string",
+      "required": true
+    },
+    "address": {
+      "type": "string",
+      "required": true
+    },
+    "bedCount": {
+      "default": 0,
+      "type": "integer",
+      "required": true
+    },
+    "bathCount": {
+      "type": "integer",
+      "required": true,
+      "default": 0
+    },
+    "area": {
+      "type": "decimal",
+      "required": true,
+      "default": 0
+    },
+    "backgroundImage": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "salesPersonName": {
+      "type": "string",
+      "required": false
+    },
+    "salesPersonDesignation": {
+      "type": "string",
+      "required": false
+    },
+    "salesPersonImage": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "adActive": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "reports",
+  "info": {
+    "name": "Report"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "userAd": {
+      "via": "reports",
+      "model": "user-ad"
+    },
+    "reportContent": {
+      "type": "string"
+    },
+    "service": {
+      "via": "reports",
+      "model": "service"
+    }
+  }
+}

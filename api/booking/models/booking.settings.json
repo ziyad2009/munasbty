@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "bookings",
+  "info": {
+    "name": "Booking"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "waiting",
+        "confirmed",
+        "cancelled"
+      ]
+    },
+    "property": {
+      "via": "bookings",
+      "model": "user-ad"
+    },
+    "invoiceImage": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "booker": {
+      "via": "bookings",
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "bookedDates": {
+      "collection": "offline-date"
+    },
+    "cancelReason": {
+      "type": "text"
+    },
+    "paymentStatus": {
+      "type": "enumeration",
+      "enum": [
+        "unpaid",
+        "paid"
+      ]
+    },
+    "netPayment": {
+      "type": "biginteger",
+      "default": "0"
+    }
+  }
+}

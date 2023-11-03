@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "service_bookings",
+  "info": {
+    "name": "ServiceBooking"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "submitted",
+        "confirmed",
+        "cancelled",
+        "rejected"
+      ],
+      "default": "submitted"
+    },
+    "booker": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "cancelReason": {
+      "type": "string"
+    },
+    "paymentStatus": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "submitted",
+        "confirmed",
+        "rejected"
+      ]
+    },
+    "netPayment": {
+      "type": "integer"
+    },
+    "bookedDates": {
+      "collection": "offline-date"
+    },
+    "service": {
+      "via": "serviceBookings",
+      "model": "service"
+    },
+    "invoiceImage": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "services",
+  "info": {
+    "name": "service"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "pricePerDay": {
+      "type": "integer"
+    },
+    "description": {
+      "type": "text"
+    },
+    "servicePhotos": {
+      "collection": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "serviceVideo": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "isPremium": {
+      "type": "boolean",
+      "default": false
+    },
+    "reviews": {
+      "collection": "review",
+      "via": "service"
+    },
+    "provider": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "serviceFeatureImage": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "unavailableDates": {
+      "collection": "offline-date",
+      "via": "service"
+    },
+    "serviceBookings": {
+      "collection": "service-booking",
+      "via": "service"
+    },
+    "reports": {
+      "collection": "report",
+      "via": "service"
+    },
+    "perkList": {
+      "collection": "perk"
+    },
+    "adStatus": {
+      "type": "enumeration",
+      "enum": [
+        "Active",
+        "Disabled"
+      ],
+      "default": "Active"
+    },
+    "location": {
+      "model": "location",
+      "via": "service"
+    },
+    "views": {
+      "type": "integer",
+      "default": 0
+    },
+    "serviceAddress": {
+      "type": "string"
+    },
+    "serviceLat": {
+      "type": "float"
+    },
+    "serviceLon": {
+      "type": "float"
+    }
+  }
+}

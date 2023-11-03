@@ -1,0 +1,28 @@
+{
+  "info": {
+    "name": "Support"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "city": {
+      "type": "string"
+    },
+    "mobile": {
+      "type": "string"
+    },
+    "comments": {
+      "type": "string"
+    }
+  },
+  "connection": "default",
+  "collectionName": "supports"
+}

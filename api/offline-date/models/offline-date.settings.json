@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "offline_dates",
+  "info": {
+    "name": "OfflineDate"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "unavailable": {
+      "type": "date"
+    },
+    "userAd": {
+      "via": "unavailableDates",
+      "model": "user-ad"
+    },
+    "offlineByVendor": {
+      "type": "boolean",
+      "default": false
+    },
+    "service": {
+      "via": "unavailableDates",
+      "model": "service"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/media-buy-ads",
+      "handler": "media-buy-ad.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/media-buy-ads/count",
+      "handler": "media-buy-ad.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/media-buy-ads/:id",
+      "handler": "media-buy-ad.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/media-buy-ads",
+      "handler": "media-buy-ad.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/media-buy-ads/:id",
+      "handler": "media-buy-ad.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/media-buy-ads/:id",
+      "handler": "media-buy-ad.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

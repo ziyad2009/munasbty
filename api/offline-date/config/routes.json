@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/offline-dates",
+      "handler": "offline-date.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/offline-dates/count",
+      "handler": "offline-date.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/offline-dates/:id",
+      "handler": "offline-date.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/offline-dates",
+      "handler": "offline-date.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/offline-dates/:id",
+      "handler": "offline-date.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/offline-dates/:id",
+      "handler": "offline-date.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "user_ads",
+  "info": {
+    "name": "UserAd"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "views": {
+      "type": "integer"
+    },
+    "price": {
+      "type": "biginteger"
+    },
+    "seller": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "description": {
+      "type": "text"
+    },
+    "featuredImage": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "adImages": {
+      "collection": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "timeStart": {
+      "type": "time"
+    },
+    "timeEnd": {
+      "type": "time"
+    },
+    "accommodation": {
+      "type": "biginteger"
+    },
+    "area": {
+      "type": "float"
+    },
+    "availableTill": {
+      "type": "datetime"
+    },
+    "adStatus": {
+      "type": "enumeration",
+      "enum": [
+        "Active",
+        "Disabled"
+      ]
+    },
+    "reviews": {
+      "collection": "review",
+      "via": "user_ad"
+    },
+    "isFeatured": {
+      "type": "boolean",
+      "default": false
+    },
+    "sellerDesignation": {
+      "type": "string"
+    },
+    "unavailableDates": {
+      "collection": "offline-date",
+      "via": "userAd"
+    },
+    "bookings": {
+      "collection": "booking",
+      "via": "property"
+    },
+    "propertyVideo": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "isPremium": {
+      "type": "boolean",
+      "default": false
+    },
+    "venueTypes": {
+      "collection": "venue-type"
+    },
+    "reports": {
+      "collection": "report",
+      "via": "userAd"
+    },
+    "perkList": {
+      "collection": "perk"
+    },
+    "location": {
+      "model": "location",
+      "via": "property"
+    },
+    "venueAddress": {
+      "type": "string"
+    },
+    "venueLat": {
+      "type": "float"
+    },
+    "venueLon": {
+      "type": "float"
+    }
+  }
+}

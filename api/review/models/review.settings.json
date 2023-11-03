@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "reviews",
+  "info": {
+    "name": "Review"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "content": {
+      "type": "text"
+    },
+    "stars": {
+      "type": "integer",
+      "default": 1,
+      "max": 5,
+      "min": 1
+    },
+    "reviewer": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "user_ad": {
+      "via": "reviews",
+      "model": "user-ad"
+    },
+    "service": {
+      "via": "reviews",
+      "model": "service"
+    }
+  }
+}

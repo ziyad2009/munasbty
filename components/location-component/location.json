@@ -1,0 +1,20 @@
+{
+  "connection": "default",
+  "collectionName": "components_location_component_locations",
+  "info": {
+    "name": "Location",
+    "icon": "air-freshener"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "latitude": {
+      "type": "decimal"
+    },
+    "longitude": {
+      "type": "decimal"
+    }
+  }
+}

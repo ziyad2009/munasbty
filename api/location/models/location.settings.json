@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "locations",
+  "info": {
+    "name": "Location"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "latitude": {
+      "type": "float"
+    },
+    "longitude": {
+      "type": "float"
+    },
+    "name": {
+      "type": "string"
+    },
+    "property": {
+      "via": "location",
+      "model": "user-ad"
+    },
+    "service": {
+      "via": "location",
+      "model": "service"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "venue_types",
+  "info": {
+    "name": "VenueType"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "typeName": {
+      "type": "string"
+    },
+    "typeIcon": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}
